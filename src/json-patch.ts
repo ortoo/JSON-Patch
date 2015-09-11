@@ -83,6 +83,7 @@ module jsonpatch {
       return true;
     },
     remove: function (obj, key) {
+      obj[key] = undefined;
       delete obj[key];
       return true;
     },
@@ -124,7 +125,12 @@ module jsonpatch {
       return true;
     },
     remove: function (arr, i) {
-      arr.splice(i, 1);
+      if (arr.pull) {
+        arr.pull(arr[i]);
+      } else {
+        arr.splice(i, 1);
+      }
+      
       return true;
     },
     replace: function (arr, i) {
