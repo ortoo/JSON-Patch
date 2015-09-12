@@ -78,7 +78,6 @@ var jsonpatch;
         },
         remove: function (obj, key) {
             obj[key] = undefined;
-            delete obj[key];
             return true;
         },
         replace: function (obj, key) {

@@ -84,7 +84,6 @@ module jsonpatch {
     },
     remove: function (obj, key) {
       obj[key] = undefined;
-      delete obj[key];
       return true;
     },
     replace: function (obj, key) {
@@ -130,7 +129,7 @@ module jsonpatch {
       } else {
         arr.splice(i, 1);
       }
-      
+
       return true;
     },
     replace: function (arr, i) {
