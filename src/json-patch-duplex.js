@@ -117,12 +117,7 @@ var jsonpatch;
             return true;
         },
         remove: function (arr, i) {
-            if (arr.pull) {
-                arr.pull(arr[i]);
-            }
-            else {
-                arr.splice(i, 1);
-            }
+            arr.splice(i, 1);
             return true;
         },
         replace: function (arr, i) {
